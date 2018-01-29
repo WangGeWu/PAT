@@ -16,7 +16,7 @@ int max = 0;
 int node;
 int edgenum = 0;
 int vflag[17575];
-void dfs(int v)//按边遍历
+void dfs(int v)//掳麓卤脽卤茅脌煤
 {
 	int i;
 	if (visited[v] == 0)
@@ -97,7 +97,7 @@ int main()
 	}
 	peoplenum = cnt;
 	//process
-	//统计连通分量
+	//脥鲁录脝脕卢脥篓路脰脕驴
 	cnt = 0;
 	for (i=0;i<peoplenum;i++) 
 	{
