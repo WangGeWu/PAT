@@ -19,7 +19,7 @@ int main()
 {
 	int i,j;
 	int n, m, s, d;
-	for (i = 0; i < 501; i++)//³õÊ¼»¯
+	for (i = 0; i < 501; i++)//åˆå§‹åŒ–
 	{
 		part[i] = -1;
 		dist[i] = inf;
