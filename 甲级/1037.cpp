@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-//̰���㷨
+//贪心算法
 int cmp(const void *a, const void *b)
 {
 	return (*(int*)a) - (*(int*)b);
