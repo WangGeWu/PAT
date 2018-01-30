@@ -30,7 +30,7 @@ int main()
 		flag_one[i] = 0;
 		flag_two[i] = 0;
 	}
-	//输入
+	//input
 	int flag = 0;
 	int num;
 	gets_s(data_one, 21);
@@ -51,12 +51,12 @@ int main()
 		}
 	}
 	data_two[strlen(data_one)] = '\0';
-	//处理
+	//process
 	if (cmp(data_one, data_two))
 		printf("Yes\n");
 	else
 		printf("No\n");
-	//输出
+	//output
 	puts(data_two);
 	return 0;
 }
