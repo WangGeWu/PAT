@@ -6,7 +6,7 @@ int main()
 	int G[Max][Max];
 	int i, j;
 	int v1, v2;
-	int rescue[Max];//¾ÈÔ®¶Ó
+	int rescue[Max];//æ•‘æ´é˜Ÿ
 	int men[Max];
 	int dist[Max];
 	int num[Max];
