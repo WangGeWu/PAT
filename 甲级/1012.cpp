@@ -21,7 +21,7 @@ int main()
 	int name;
 	printf("!!");
 	scanf("%d%d", &num, &M);
-	for (i = 0; i < num; i++)//³õÊ¼»¯
+	for (i = 0; i < num; i++)//åˆå§‹åŒ–
 	{
 		scanf("%d%d%d%d", &v[i].ID, &v[i].score[1], &v[i].score[2], &v[i].score[3]);
 		v[i].score[0] = (v[i].score[1] + v[i].score[2] + v[i].score[3]) / 3;
