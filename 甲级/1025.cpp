@@ -46,7 +46,7 @@ int main()
 		n--; i++;
 	}
 	//process
-	//组内排序
+	//缁勫唴鎺掑簭
 	n = temp;
 	for (i = 0; i < n; i++)
 	{
@@ -73,7 +73,7 @@ int main()
 		}
 		cnt = num[i]+cnt;
 	}
-	//全体排序
+	//鍏ㄤ綋鎺掑簭
 	cnt = 0;
 	for (i = 0; i < n; i++)
 	{
