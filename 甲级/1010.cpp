@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<math.h>
 #include<string.h>
-int map[256];//´æ·Å×Ö·û¶ÔÓ¦µÄÊý×Ö
+int map[256];//å­˜æ”¾å­—ç¬¦å¯¹åº”çš„æ•°å­—
 long long ToTen(char a[], long long radix)
 {
 	long long ans = 0;
