@@ -1,4 +1,4 @@
-//Î´ÍêÈ«Àí½â
+//æœªå®Œå…¨ç†è§£
 #include<stdio.h>  
 int CountOnes(int n){  
     int count = 0;  
