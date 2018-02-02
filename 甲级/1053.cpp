@@ -6,8 +6,8 @@ struct Tnode
 	int numchild;
 	int child[100];
 }treenode[100];
-int path[100];//±£´æ·ÃÎÊ½ÚµãiµÄ¸¸½Úµã
-void Print(int v)//µİ¹é´òÓ¡Â·¾¶
+int path[100];//ä¿å­˜è®¿é—®èŠ‚ç‚¹içš„çˆ¶èŠ‚ç‚¹
+void Print(int v)//é€’å½’æ‰“å°è·¯å¾„
 {
 	if (path[v] != -1)
 		Print(path[v]);
@@ -40,16 +40,17 @@ int main()
 		treenode[r].numchild = num;
 		for (j = 0; j < num; j++)
 			scanf("%d", &treenode[r].child[j]);
-		qsort(treenode[r].child, treenode[r].numchild, sizeof(int), cmp);//½«×Ó½Úµã¶ÁÈëchildÊı×é£¬°´×Ó½ÚµãµÄÈ¨Öµ´ÓĞ¡µ½´ó¶ÔchildÊı×éÅÅĞò
+		qsort(treenode[r].child, treenode[r].numchild, sizeof(int), cmp);//å°†å­èŠ‚ç‚¹è¯»å…¥childæ•°ç»„ï¼ŒæŒ‰å­èŠ‚ç‚¹çš„æƒå€¼ä»å°åˆ°å¤§å¯¹childæ•°ç»„æ’åº
 	}
 	//process
 	int node;
 	path[0] = -1;
 	W[0] = treenode[0].weight;
 	stack[++top] = 0;
-	while (top != -1)//Õ»²»¿Õ
+	//dfs
+	while (top != -1)//æ ˆä¸ç©º
 	{
-		node = stack[top--];//³öÕ»£¬ÒòÎªÖ®Ç°ÒÑ¾­ÅÅĞò£¬ËùÒÔÍ¬Ò»²ãÖĞÈ¨Öµ×î´óµÄÏÈ³öÕ»
+		node = stack[top--];//å‡ºæ ˆï¼Œå› ä¸ºä¹‹å‰å·²ç»æ’åºï¼Œæ‰€ä»¥åŒä¸€å±‚ä¸­æƒå€¼æœ€å¤§çš„å…ˆå‡ºæ ˆ
 		if (W[node] == k&&treenode[node].numchild == 0)
 		{
 			Print(node);
@@ -57,9 +58,9 @@ int main()
 		}
 		for (i = 0; i < treenode[node].numchild; i++)
 		{
-			stack[++top] = treenode[node].child[i];//½«½ÚµãµÄº¢×ÓÑ¹Õ»£¬È¨ÖµĞ¡µÄÏÈÑ¹Èë£¨ºó³ö£©
-			W[treenode[node].child[i]] = treenode[treenode[node].child[i]].weight + W[node];//¸üĞÂÈ¨ÖØ
-			path[treenode[node].child[i]] = node;//¸üĞÂÂ·¾¶
+			stack[++top] = treenode[node].child[i];//å°†èŠ‚ç‚¹çš„å­©å­å‹æ ˆï¼Œæƒå€¼å°çš„å…ˆå‹å…¥ï¼ˆåå‡ºï¼‰
+			W[treenode[node].child[i]] = treenode[treenode[node].child[i]].weight + W[node];//æ›´æ–°æƒé‡
+			path[treenode[node].child[i]] = node;//æ›´æ–°è·¯å¾„
 		}
 	}
 	return 0;
