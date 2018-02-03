@@ -7,7 +7,7 @@ struct node
 	int age;
 	int money;
 }man[100001];
-int cmp(const void *a, const void *b)//°´money>age>nameµÄÓÅÏÈË³ÐòÅÅÐò
+int cmp(const void *a, const void *b)//æŒ‰money>age>nameçš„ä¼˜å…ˆé¡ºåºæŽ’åº
 {
 	if (((struct node*)a)->money != ((struct node*)b)->money)
 		return ((struct node*)b)->money - ((struct node*)a)->money;
