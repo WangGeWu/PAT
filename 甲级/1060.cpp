@@ -1,4 +1,4 @@
-//一个点没AC
+//涓�涓祴璇曠偣鏈狝C
 #include<stdio.h>
 #include<string.h>
 int main()
