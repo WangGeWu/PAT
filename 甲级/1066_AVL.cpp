@@ -10,7 +10,7 @@ int max(int x, int y)
 {
 	return x > y ? x : y;
 }
-Tree ToRR(Tree t)//²åÈëµÄ½ÚµãÔÚtµÄÓÒ×ÓÊ÷µÄÓÒ×ÓÊ÷ÉÏ
+Tree ToRR(Tree t)//æ’å…¥çš„èŠ‚ç‚¹åœ¨tçš„å³å­æ ‘çš„å³å­æ ‘ä¸Š
 {
 	Tree node = t->right;
 	t->right = node->left;
@@ -24,17 +24,17 @@ Tree ToLL(Tree t)
 	node->right = t;
 	return node;
 }
-Tree ToRL(Tree t)//²åÈëµÄ½ÚµãÔÚtµÄÓÒ×ÓÊ÷µÄ×ó×ÓÊ÷ÉÏ
+Tree ToRL(Tree t)//æ’å…¥çš„èŠ‚ç‚¹åœ¨tçš„å³å­æ ‘çš„å·¦å­æ ‘ä¸Š
 {
-	t->right = ToLL(t->right);
-	return ToRR(t);
+	t->right = ToLL(t->right);//å…ˆå°†ä»¥tå³å­æ ‘å·¦æ—‹
+	return ToRR(t);//å†å°†tå³æ—‹
 }
 Tree ToLR(Tree t)
 {
-	t->left = ToRR(t->left);
-	return ToLL(t);
+	t->left = ToRR(t->left);//å…ˆå°†tçš„å·¦å­æ ‘å³æ—‹
+	return ToLL(t);//å†å°†tå·¦æ—‹
 }
-int high(Tree t)//¼ÆËãÊ÷tµÄ¸ß
+int high(Tree t)//è®¡ç®—æ ‘tçš„é«˜
 {
 	if (!t)
 		return 0;
@@ -53,9 +53,9 @@ Tree insert(int x,Tree t)
 	else if (t->key > x)
 	{
 		t->left=insert(x, t->left);
-		if (high(t->left) - high(t->right) == 2)//×ó×ÓÊ÷¸ß
+		if (high(t->left) - high(t->right) == 2)//å·¦å­æ ‘é«˜
 		{
-			if (t->left->key > x)//x²åÔÚÁËt×ó×ÓÊ÷µÄ×ó×ÓÊ÷ÉÏ
+			if (t->left->key > x)//xæ’åœ¨äº†tå·¦å­æ ‘çš„å·¦å­æ ‘ä¸Š
 				t=ToLL(t);
 			else
 				t=ToLR(t);
@@ -64,9 +64,9 @@ Tree insert(int x,Tree t)
 	else
 	{
 		t->right = insert(x, t->right);
-		if (high(t->right) - high(t->left) == 2)//ÓÒ×ÓÊ÷¸ß
+		if (high(t->right) - high(t->left) == 2)//å³å­æ ‘é«˜
 		{
-			if (t->right->key < x)//x²åÔÚÁËtÓÒ×ÓÊ÷µÄÓÒ×ÓÊ÷ÉÏ
+			if (t->right->key < x)//xæ’åœ¨äº†tå³å­æ ‘çš„å³å­æ ‘ä¸Š
 				t=ToRR(t);
 			else
 				t=ToRL(t);
