@@ -1,4 +1,4 @@
-//Ò»¸ö²âÊÔµãÃ»¹ý
+//ä¸€ä¸ªæµ‹è¯•ç‚¹è¶…æ—¶
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -49,7 +49,7 @@ int main()
 	}
 	qsort(car, n, sizeof(struct node), cmp1);
 	int cnt = 0;
-	for (i = 0; i < n - 1; i++)//½«ÓÐÐ§µÄÐÅÏ¢±£´æÔÚÁíÒ»¸öÊý×éÖÐ
+	for (i = 0; i < n - 1; i++)//å°†æœ‰æ•ˆçš„ä¿¡æ¯ä¿å­˜åœ¨å¦ä¸€ä¸ªæ•°ç»„ä¸­
 	{
 		if (!strcmp(car[i].id, car[i + 1].id) && car[i].flag == 1 && car[i + 1].flag == -1)
 		{
@@ -61,7 +61,7 @@ int main()
 			i++;
 		}
 	}
-	for (i = 0; i < cnt - 1; i++)//¼ÆËãÓÐÐ§³µÁ¾µÄµÈ´ýÊ±¼ä
+	for (i = 0; i < cnt - 1; i++)//è®¡ç®—æœ‰æ•ˆè½¦è¾†çš„ç­‰å¾…æ—¶é—´
 	{
 		if (!strcmp(tcar[i].id, tcar[i + 1].id))
 		{
