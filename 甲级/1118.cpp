@@ -6,7 +6,7 @@ int find(int n)
 	while (bird[x] > -1)
 		x = bird[x];
 	int node = n;
-	while (bird[node] > -1)/*路径压缩，否则会超时*/
+	while (bird[node] > -1)/*璺緞鍘嬬缉锛屽惁鍒欎細瓒呮椂*/
 	{
 		int temp = node;
 		node = bird[node];
