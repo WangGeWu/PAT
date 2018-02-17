@@ -52,21 +52,22 @@ int main()
 		i = list[i].next;
 	}while (i != -1);
 	int cnt = 0;
+	//灏嗕笁涓暟缁勬嫹璐濆埌缁撴灉鏁扮粍涓幓
 	for (i = 0; i < cnt_a; i++)
 	{
 		list[cnt].key = list_a[i].key;
-		list[cnt++].next = list_a[i].address;//next 保存元素当前地址
+		list[cnt++].next = list_a[i].address;//next 淇濆瓨鍏冪礌褰撳墠鍦板潃锛屽噺灏戝唴瀛樼殑浣跨敤
 	}
 	for (i = 0; i < cnt_b; i++)
 	{
 		list[cnt].key = list_b[i].key;
-		list[cnt++].next = list_b[i].address;//next 保存元素当前地址
+		list[cnt++].next = list_b[i].address;
 	}
 	
 	for (i = 0; i < cnt_c; i++)
 	{
 		list[cnt].key = list_c[i].key;
-		list[cnt++].next = list_c[i].address;//next 保存元素当前地址
+		list[cnt++].next = list_c[i].address;
 	}
 	for (i = 0; i < cnt; i++)
 	{
