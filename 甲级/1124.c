@@ -5,11 +5,11 @@ struct node
 	int flag;
 	char name[21];
 }people[1001];
-struct fnode//´æ·Å»ñ½±µÄ×ª·¢
+struct fnode//å­˜æ”¾è·å¥–çš„è½¬å‘
 {
 	char name[21];
 }fpeo[1001];
-int judge(char *s,int n)/*ÅĞ¶Ï×ª·¢ÊÇ·ñÒÑ¾­³öÏÖ¹ı*/
+int judge(char *s,int n)/*åˆ¤æ–­è½¬å‘æ˜¯å¦å·²ç»å‡ºç°è¿‡*/
 {
     for (int i = 0; i < n; i++)
 		if (!strcmp(s, fpeo[i].name))
