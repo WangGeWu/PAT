@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<string.h>
 /*
-  *���������鱣����Ů��ͬ����Ϣ��
-  *�ֱ��ҳ�������Сֵ
+  *用两个数组保存男女不同的信息，
+  *分别找出最大和最小值
   */
 struct mannode
 {
