@@ -9,4 +9,4 @@ PAT甲级题库 https://www.patest.cn/contests/pat-a-practise
 
 
 
-欢迎批评执政(⊙o⊙)！
+欢迎批评指正(⊙o⊙)！
