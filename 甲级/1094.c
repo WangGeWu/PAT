@@ -4,9 +4,9 @@ struct node {
 	int childnum;
 	int child[100];
 }list[100];
-int max = 0;//¼ÇÂ¼×î´ó½ÚµãÊı
-int node;//¼ÇÂ¼×î¶à½ÚµãµÄ²ãÊı
-int deepman[100];//¼ÇÂ¼Ã¿²ã½ÚµãÊı
+int max = 0;//è®°å½•æœ€å¤§èŠ‚ç‚¹æ•°
+int node;//è®°å½•æœ€å¤šèŠ‚ç‚¹çš„å±‚æ•°
+int deepman[100];//è®°å½•æ¯å±‚èŠ‚ç‚¹æ•°
 void dfs(int n)
 {
 	deepman[list[n].deep]++;
