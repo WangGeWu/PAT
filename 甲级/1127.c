@@ -1,8 +1,8 @@
 /*
- *��������תǰ����޸ġ�ǰ��Ҳ��������dfs��
- *�ݹ�ʱ���������ϸ��ڵ����ȡ�
- *��ݹ��������������ȼ��Ǹ��ڵ�����+1
- *�ýṹ��洢ÿ��Ľڵ㣬�����±�Ϊ��ȡ����ʱ���������
+ *后序中序转前序的修改。前序也就是树的dfs。
+ *递归时，参数加上根节点的深度。
+ *则递归的左右子树的深度即是父节点的深度+1
+ *用结构体存储每层的节点，数组下标为深度。输出时方便输出。
  */
 #include<stdio.h>
 int inorder[31];
@@ -11,9 +11,9 @@ int preorder[31];
 struct Tnode
 {
 	int node_num;
-	int node[31];//�ڵ�ֵ
-}list[31];//�±�������
-void InPostToPre(int in,int post,int n,int deep)/*in����������ʼ�±꣬post����������ʼ�±꣬deep���ڵ�����*/
+	int node[31];//节点值
+}list[31];//下标代表深度
+void InPostToPre(int in,int post,int n,int deep)/*in中序数组起始下标，post后续数组起始下标，deep根节点的深度*/
 {
 	if (n <= 0)
 		return;
