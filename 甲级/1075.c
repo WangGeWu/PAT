@@ -47,7 +47,7 @@ int main()
 			if (y != -1)
 			{
 				if (y == s[x - 1])
-					stu[id].num++;//满分的科目数
+					stu[id].num++;//脗煤路脰碌脛驴脝脛驴脢媒
 				stu[id].visit = 1;
 				stu[id].score[x - 1] = y;
 			}
