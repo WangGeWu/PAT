@@ -1,9 +1,9 @@
-//¶¯Ì¬¹æ»®
+//åŠ¨æ€è§„åˆ’
 /*
-  *flag[i][j]==1±íÊ¾´Óiµ½jµÄ×Ó´®Îª¶Ô³Æ´®
+  *flag[i][j]==1è¡¨ç¤ºä»iåˆ°jçš„å­ä¸²ä¸ºå¯¹ç§°ä¸²
   *s[i] == s[j] : flag[i][j] = flag[i+1][j-1]
   *s[i] != s[j] : flag[i][j] =0
-  *         ±ß½ç  flag[i][i] = 1, flag[i][i+1] = (s[i] == s[i+1]) ? 1 : 0
+  *         è¾¹ç•Œ  flag[i][i] = 1, flag[i][i+1] = (s[i] == s[i+1]) ? 1 : 0
 */
 #include<stdio.h>
 #include<string.h>
@@ -15,7 +15,7 @@ int main()
 	int cnt = 1;
 	gets_s(s, 1001);
 	int len = strlen(s);
-	//³õÊ¼»¯
+	//åˆå§‹åŒ–
 	for (i = 0; i < len; i++)
 	{
 		flag[i][i] = 1;
