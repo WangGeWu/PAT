@@ -1,4 +1,4 @@
-//两个测试点没AC
+//脕陆赂枚虏芒脢脭碌茫脙禄AC
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
