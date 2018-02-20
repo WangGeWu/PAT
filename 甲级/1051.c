@@ -1,12 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
-//Õ»Ä£Äâ
+//æ ˆæ¨¡æ‹Ÿ
 int main()
 {
 	int flag = 1;
 	int stack[1001];
-	int top;//Õ»¶¥ÏÂ±ê
-	int num;//Õ»ÖÐÔªËØ¸öÊý
+	int top;//æ ˆé¡¶ä¸‹æ ‡
+	int num;//æ ˆä¸­å…ƒç´ ä¸ªæ•°
 	int m, n, k;
 	int test[1001];
 	scanf("%d %d %d", &m, &n, &k);
@@ -14,7 +14,7 @@ int main()
 	int cnt;
 	for (i = 0; i < k; i++)
 	{
-		top = -1;//Çå¿ÕÕ»
+		top = -1;//æ¸…ç©ºæ ˆ
 		flag = 1;
 		cnt = 1;
 		num = 0;
@@ -25,7 +25,7 @@ int main()
 		j = 0;
 		while(j<n)
 		{
-			if (num!=0&&stack[top] == test[j])//Õ»²»¿Õ
+			if (num!=0&&stack[top] == test[j])//æ ˆä¸ç©º
 			{
 				//pop
 				top--;
