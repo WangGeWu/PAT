@@ -11,14 +11,14 @@ int main()
 	for (i = 0; i < n; i++)
 	{
 		scanf("%d", &num[i]);
-		pos[num[i]] = i;//¼ÇÂ¼num[i]´æ´¢µÄÎ»ÖÃ,·ñÔò»á³¬Ê±
+		pos[num[i]] = i;//è®°å½•num[i]å­˜å‚¨çš„ä½ç½®,å¦åˆ™ä¼šè¶…æ—¶
 	}
 	int flag;
 	int index=0;
-	node = pos[0];//node¼ÇÂ¼0ËùÔÚÏÂ±ê
+	node = pos[0];//nodeè®°å½•0æ‰€åœ¨ä¸‹æ ‡
 	while (1)
 	{
-		if (node == 0)//Èç¹û0ÔÚÏÂ±ê0´¦£¬½»»»0ºÍµÚÒ»¸ö²»ÔÚÆäÎ»ÖÃµÄÊý
+		if (node == 0)//å¦‚æžœ0åœ¨ä¸‹æ ‡0å¤„ï¼Œäº¤æ¢0å’Œç¬¬ä¸€ä¸ªä¸åœ¨å…¶ä½ç½®çš„æ•°
 		{
 			flag = 0;
 			for (i = index; i < n; i++)
@@ -26,16 +26,16 @@ int main()
 				if (num[i] != i)
 				{
 					flag = 1;
-					index = i;//index´æ´¢µÚÒ»¸ö²»ÔÚÆäÎ»ÖÃµÄÊýµÄÏÂ±ê,ÏÂÒ»´ÎÑ­»·Ê±£¬´Óindexºó¿ªÊ¼Ñ­»·
+					index = i;//indexå­˜å‚¨ç¬¬ä¸€ä¸ªä¸åœ¨å…¶ä½ç½®çš„æ•°çš„ä¸‹æ ‡,ä¸‹ä¸€æ¬¡å¾ªçŽ¯æ—¶ï¼Œä»ŽindexåŽå¼€å§‹å¾ªçŽ¯
 					break;
 				}
 			}
 			if (flag == 0)break;
-			num[node] = num[i];//½»»»
-			pos[num[i]] = node;//¸üÐÂpos
-			num[i] = 0;//½»»»
-			pos[0] = i;//¸üÐÂpos
-			node = i;//¸üÐÂnode
+			num[node] = num[i];//äº¤æ¢
+			pos[num[i]] = node;//æ›´æ–°pos
+			num[i] = 0;//äº¤æ¢
+			pos[0] = i;//æ›´æ–°pos
+			node = i;//æ›´æ–°node
 			cnt++;
 		}
 		else
