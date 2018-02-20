@@ -17,11 +17,11 @@ int bfs(int v)
 	int front=-1, rear=-1;
 	visited[v] = 1;
 	deep[v] = 1;
-	queue[++rear] = v;//vÈë¶Ó
-	while (front != rear)//¶Ó²»¿ÕÊ±
+	queue[++rear] = v;//vå…¥é˜Ÿ
+	while (front != rear)//é˜Ÿä¸ç©ºæ—¶
 	{
-		int node = queue[++front];//³ö¶Ó
-		if (deep[node] > d + 1)//³¬¹ıÏŞÖÆµÄÈËÊı
+		int node = queue[++front];//å‡ºé˜Ÿ
+		if (deep[node] > d + 1)//è¶…è¿‡é™åˆ¶çš„äººæ•°
 			break;
 		else   
 			cnt++;
@@ -30,8 +30,8 @@ int bfs(int v)
 			if (graph[node][i]==1&&visited[i] == 0)
 			{
 				visited[i] = 1;
-				deep[i] = deep[node] + 1;//¼ÆËãÉî¶È
-				queue[++rear] = i;//Èë¶Ó
+				deep[i] = deep[node] + 1;//è®¡ç®—æ·±åº¦
+				queue[++rear] = i;//å…¥é˜Ÿ
 			}
 		}
 	}
