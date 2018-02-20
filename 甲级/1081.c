@@ -16,7 +16,7 @@ int main()
 	for (i = 0; i < n; i++)
 	{
 		scanf("%lld/%lld", &a, &b);
-		gcdnum = gcd(a,b);//求最大公约数
+		gcdnum = gcd(a,b);//脟贸脳卯麓贸鹿芦脭录脢媒
 		a = a / gcdnum;
 		b = b / gcdnum;
 		suma = suma*b + sumb*a;
