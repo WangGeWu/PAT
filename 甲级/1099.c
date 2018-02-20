@@ -12,7 +12,7 @@ int cmp(const void*a, const void *b)
 {
 	return *(int*)a - *(int*)b;
 }
-int find_node_num(int t)//求根为t的树的节点总数
+int find_node_num(int t)//脟贸赂霉脦陋t碌脛脢梅碌脛陆脷碌茫脳脺脢媒
 {
 	if (t == -1)
 		return 0;
