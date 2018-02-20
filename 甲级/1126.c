@@ -13,7 +13,7 @@ void dfs(int v)
 }
 int main()
 {
-	int degree[501] = {0};
+	int degree[501];
 	int m;
 	int i, j;
 	scanf("%d%d", &n, &m);
