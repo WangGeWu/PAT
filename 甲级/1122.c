@@ -6,15 +6,15 @@ int judge(int a[], int x)
 {
 	
 	int i;
-	if (n + 1 != x)return 0;//顶点个数
-	if (a[0] != a[x - 1])return 0;//首尾是否相等
-	for (i = 0; i < x - 1; i++)//相邻顶点是否有边
+	if (n + 1 != x)return 0;//椤剁偣涓暟
+	if (a[0] != a[x - 1])return 0;//棣栧熬鏄惁鐩哥瓑
+	for (i = 0; i < x - 1; i++)//鐩搁偦椤剁偣鏄惁鏈夎竟
 		if (graph[a[i]][a[i + 1]] == 0)
 			return 0;
-	for (i = 1; i < x - 1; i++)//除首尾外没有重复节点
+	for (i = 1; i < x - 1; i++)//闄ら灏惧娌℃湁閲嶅鑺傜偣
 	{
 		flag[a[i]]++;
-		if (flag[a[i]] == 2||a[i]==a[0])//中间序列不能出现首尾节点
+		if (flag[a[i]] == 2||a[i]==a[0])//涓棿搴忓垪涓嶈兘鍑虹幇棣栧熬鑺傜偣
 			return 0;
 	}
 	return 1;
