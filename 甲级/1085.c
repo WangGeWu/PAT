@@ -18,7 +18,7 @@ int main()
 	for (i = 0; i < n; i++)
 	{
 		length = length - 1;
-		for (j = i+length; j < n; j++)//下一次循环从i+length开始
+		for (j = i+length; j < n; j++)//脧脗脪禄麓脦脩颅禄路麓脫i+length驴陋脢录
 		{
 			if (num[i] * p >= num[j])
 				length++;
