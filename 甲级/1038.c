@@ -2,8 +2,8 @@
 #include<stdlib.h>
 #include<string.h>
 char str[10001][9];
-//cmpº¯ÊıµÄÓ¦ÓÃ
-//Èô×Ö·û´®a¡¢bÆ´½ÓµÄÖµ´óÓÚb¡¢aÆ´½ÓµÄÖµ£¬ÔòaÓ¦¸ÃÅÅÔÚbµÄºóÃæ
+//cmpå‡½æ•°çš„åº”ç”¨
+//è‹¥å­—ç¬¦ä¸²aã€bæ‹¼æ¥çš„å€¼å¤§äºbã€aæ‹¼æ¥çš„å€¼ï¼Œåˆ™aåº”è¯¥æ’åœ¨bçš„åé¢
 int cmp(const void *a, const void *b)
 {
 	char str1[18], str2[18];
