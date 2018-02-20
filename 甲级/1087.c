@@ -5,11 +5,11 @@ int numTostr[20000];
 int strTonum[200];
 int visited[200];
 int path[200];
-int dist[200];//»¨·Ñ
-int num[200];//×î¶ÌÂ·¾¶Êı
-int happiness[200];//Ã¿¸ö³ÇÊĞµÄĞÒ¸£Öµ
-int trahappiness[200];//¾­¹ıµÄ½ÚµãĞÒ¸£×ÜÖµ
-int nodenum[200];//½Úµã×î¶ÌÂ·¾¶¾­¹ıµÄ½ÚµãÊı
+int dist[200];//èŠ±è´¹
+int num[200];//æœ€çŸ­è·¯å¾„æ•°
+int happiness[200];//æ¯ä¸ªåŸå¸‚çš„å¹¸ç¦å€¼
+int trahappiness[200];//ç»è¿‡çš„èŠ‚ç‚¹å¹¸ç¦æ€»å€¼
+int nodenum[200];//èŠ‚ç‚¹æœ€çŸ­è·¯å¾„ç»è¿‡çš„èŠ‚ç‚¹æ•°
 void Print(int n)
 {
 	int x = strTonum[n];
@@ -42,7 +42,7 @@ int main()
 	}
 	char city[4];
 	scanf("%s", city);
-	int m = (city[0] - 'A') * 26 * 26 + (city[1] - 'A') * 26 + (city[2] - 'A');//½«×Ö·û´®×ª»»Îª26½øÖÆµÄÊı
+	int m = (city[0] - 'A') * 26 * 26 + (city[1] - 'A') * 26 + (city[2] - 'A');//å°†å­—ç¬¦ä¸²è½¬æ¢ä¸º26è¿›åˆ¶çš„æ•°
 	numTostr[m] = 0;
 	strTonum[0] = m;
 	for (i = 1; i < n; i++)
@@ -101,27 +101,27 @@ int main()
 			{
 				if (dist[i] > dist[node] + graph[node][i])
 				{
-					dist[i] = dist[node] + graph[node][i];//»¨·Ñ
-					path[i] = node;//Â·¾¶
-					trahappiness[i] = trahappiness[node] + happiness[i];//ĞÒ¸£×ÜÖµ
+					dist[i] = dist[node] + graph[node][i];//èŠ±è´¹
+					path[i] = node;//è·¯å¾„
+					trahappiness[i] = trahappiness[node] + happiness[i];//å¹¸ç¦æ€»å€¼
 					num[i] = num[node];
-					nodenum[i] = nodenum[node] + 1;//Â·¹ı½ÚµãÊı
+					nodenum[i] = nodenum[node] + 1;//è·¯è¿‡èŠ‚ç‚¹æ•°
 				}
 				else if (dist[i] == dist[node] + graph[node][i])
 				{
-					num[i] = num[node] + num[i];//Â·¾¶Êı
+					num[i] = num[node] + num[i];//è·¯å¾„æ•°
 					if (trahappiness[i] < trahappiness[node] + happiness[i])
 					{
-						trahappiness[i] = trahappiness[node] + happiness[i];//ĞÒ¸£×ÜÖµ
-						path[i] = node;//Â·¾¶
-						nodenum[i] = nodenum[node] + 1;//Â·¹ı½ÚµãÊı
+						trahappiness[i] = trahappiness[node] + happiness[i];//å¹¸ç¦æ€»å€¼
+						path[i] = node;//è·¯å¾„
+						nodenum[i] = nodenum[node] + 1;//è·¯è¿‡èŠ‚ç‚¹æ•°
 					}
 					else if (trahappiness[i] == trahappiness[node] + happiness[i])
 					{
 						if (trahappiness[i] / nodenum[i] < (trahappiness[node] + happiness[i]) / (nodenum[node] + 1))
 						{
-							path[i] = node;//Â·¾¶
-							nodenum[i] = nodenum[node] + 1;//Â·¹ı½ÚµãÊı
+							path[i] = node;//è·¯å¾„
+							nodenum[i] = nodenum[node] + 1;//è·¯è¿‡èŠ‚ç‚¹æ•°
 						}
 					}
 				}
