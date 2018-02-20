@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
-int count[50001] = {0};//¼ÇÂ¼Ã¿¸ö¼ìË÷³öÏÖµÄ´ÎÊı
+int count[50001] = {0};//è®°å½•æ¯ä¸ªæ£€ç´¢å‡ºç°çš„æ¬¡æ•°
 int k;
-int rank[11] = {0};//¼ÇÂ¼µ±Ç°Ó¦¸ÃÍÆ¼öµÄk¸öÖµ
+int rank[11] = {0};//è®°å½•å½“å‰åº”è¯¥æ¨èçš„kä¸ªå€¼
 int cmp(const void *a, const void *b)
 {
 	if (count[*(int*)a] != count[*(int*)b])
@@ -37,9 +37,9 @@ int main()
 			}
 			printf("\n");
 		}
-		if(find(data))//±¾´ÎµÄ¼ìË÷Èç¹ûÔÚÉÏ´ÎrankÊı×éÖĞ£¬ÔòÖØĞÂÅÅĞò¼´¿É
+		if(find(data))//æœ¬æ¬¡çš„æ£€ç´¢å¦‚æœåœ¨ä¸Šæ¬¡rankæ•°ç»„ä¸­ï¼Œåˆ™é‡æ–°æ’åºå³å¯
 			qsort(rank, k, sizeof(int), cmp);
-		else if (count[data] > count[rank[k - 1]] || (count[data] == count[rank[k - 1]] && data < rank[k - 1]))//Èç¹û²»ÔÚrankÊı×éÖĞ£¬ºÍrankÖĞÅÅ×îºóÒ»Î»±È½Ï£¬Âú×ãÌõ¼şÊ±Ìæ»»×îºóÒ»Ãû£¬ÖØĞÂ½øĞĞÅÅĞò
+		else if (count[data] > count[rank[k - 1]] || (count[data] == count[rank[k - 1]] && data < rank[k - 1]))//å¦‚æœä¸åœ¨rankæ•°ç»„ä¸­ï¼Œå’Œrankä¸­æ’æœ€åä¸€ä½æ¯”è¾ƒï¼Œæ»¡è¶³æ¡ä»¶æ—¶æ›¿æ¢æœ€åä¸€åï¼Œé‡æ–°è¿›è¡Œæ’åº
 		{
 			rank[k - 1] = data;
 			qsort(rank, k, sizeof(int), cmp);
