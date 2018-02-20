@@ -20,4 +20,5 @@ int main()
 		len = len / 2 + a[i];
 	}
 	printf("%d", (int)(len / 2));
+	return 0;
 }
