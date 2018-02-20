@@ -1,4 +1,4 @@
-//Á½¸ö²âÊÔµã³¬Ê±
+//ä¸¤ä¸ªæµ‹è¯•ç‚¹è¶…æ—¶
 #include<stdio.h>
 #include<stdlib.h>
 struct node
@@ -25,7 +25,7 @@ int main()
 	for (i = 0; i < n; i++)
 		scanf("%d", &a[i]);
 	//process
-	//×î³¤¹«¹²×ÓÐòÁÐËã·¨µÄÐÞ¸Ä
+	//æœ€é•¿å…¬å…±å­åºåˆ—ç®—æ³•çš„ä¿®æ”¹
 	long min=100000001;
 	int value;
 	int cnt=0;
