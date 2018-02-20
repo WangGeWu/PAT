@@ -1,8 +1,8 @@
 #include<stdio.h>
-int front[31];//ÏÈĞò
-int mid[31];//ÖĞĞò
-int post[31];//ºóĞò
-void ToPost(int f,int m,int p,int n)//fÎªÇ°ĞòÊı×éµÄÊ×ÔªËØÏÂ±ê£¬mÎªÖĞĞòÊı×éÊ×ÔªËØµÄÏÂ±ê£¬pÎªºóĞòÊı×éÊ×ÔªËØµÄÏÂ±ê
+int front[31];//å…ˆåº
+int mid[31];//ä¸­åº
+int post[31];//ååº
+void ToPost(int f,int m,int p,int n)//fä¸ºå‰åºæ•°ç»„çš„é¦–å…ƒç´ ä¸‹æ ‡ï¼Œmä¸ºä¸­åºæ•°ç»„é¦–å…ƒç´ çš„ä¸‹æ ‡ï¼Œpä¸ºååºæ•°ç»„é¦–å…ƒç´ çš„ä¸‹æ ‡
 {
 	if (n <= 0)                         
 		return;
@@ -10,8 +10,8 @@ void ToPost(int f,int m,int p,int n)//fÎªÇ°ĞòÊı×éµÄÊ×ÔªËØÏÂ±ê£¬mÎªÖĞĞòÊı×éÊ×ÔªËØ
 	while (mid[i] != front[f])i++;
 	int l1 = i - m, l2 = n - i + m - 1;
 	post[p + n - 1] = front[f];
-	ToPost(f+1,m,p,l1);//µİ¹é×ó×ÓÊ÷
-	ToPost(f+1+l1,i+1,p+l1,l2);//µİ¹éÓÒ×ÓÊ÷
+	ToPost(f+1,m,p,l1);//é€’å½’å·¦å­æ ‘
+	ToPost(f+1+l1,i+1,p+l1,l2);//é€’å½’å³å­æ ‘
 }
 int main()
 {
@@ -29,14 +29,14 @@ int main()
 		if (s[1] == 'u')
 		{
 			scanf("%d", &num);
-			front[cnt1] = num;//ÏÈĞò±éÀúÊı×é
+			front[cnt1] = num;//å…ˆåºéå†æ•°ç»„
 			stack[++top] = num;
-			cnt1++;//push³öÏÖµÄ´ÎÊı¼ÓÒ»
+			cnt1++;//pushå‡ºç°çš„æ¬¡æ•°åŠ ä¸€
 		}
 		else
 		{
-			mid[cnt2] = stack[top--];//ÖĞĞò±éÀúÊı×é
-			cnt2++;//pop³öÏÖµÄ´ÎÊı¼ÓÒ»
+			mid[cnt2] = stack[top--];//ä¸­åºéå†æ•°ç»„
+			cnt2++;//popå‡ºç°çš„æ¬¡æ•°åŠ ä¸€
 		}
 	}
 	ToPost(0,0,0,n);
