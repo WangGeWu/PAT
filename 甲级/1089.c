@@ -1,4 +1,4 @@
-//´ıÍêÉÆ
+//å¾…å®Œå–„
 #include<stdio.h>
 #include<stdlib.h>
 int n1[100], n2[100];
