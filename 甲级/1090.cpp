@@ -1,11 +1,11 @@
-//Á½¸ö²âÊÔµãÃ»¹ı
+//ä¸¤ä¸ªæµ‹è¯•ç‚¹æ²¡è¿‡
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
 struct node {
 	int deep;
 	int child[100];
-	int childnum=0;
+	int childnum;
 }list[100001];
 int top = -1;
 int cnt;
@@ -15,7 +15,7 @@ double max = -1;
 double p, r;
 void dfs(int n)
 {
-	if (list[n].childnum == 0)//Ò¶×Ó½Úµã
+	if (list[n].childnum == 0)//å¶å­èŠ‚ç‚¹
 	{
 		price = pow(1 + r, list[n].deep-1)*p;
 		if (price > max)
@@ -42,7 +42,7 @@ int main()
 		int v;
 		scanf("%d", &v);
 		if (v == -1)
-			list[n].child[list[n].childnum++] = i;//¸ù½Úµã·ÅÔÚÏÂ±êÎªn´¦
+			list[n].child[list[n].childnum++] = i;//æ ¹èŠ‚ç‚¹æ”¾åœ¨ä¸‹æ ‡ä¸ºnå¤„
 		else
 			list[v].child[list[v].childnum++] = i;
 	}
