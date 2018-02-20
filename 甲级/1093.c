@@ -1,5 +1,5 @@
-//统计A前面P的个数，A后面T的个数，当前A组成的PAT数等于cntp*cntt;
-//将所有出现的A累加
+//缁熻A鍓嶉潰P鐨勪釜鏁帮紝A鍚庨潰T鐨勪釜鏁帮紝褰撳墠A缁勬垚鐨凱AT鏁扮瓑浜巆ntp*cntt;
+//灏嗘墍鏈夊嚭鐜扮殑A绱姞
 #include<stdio.h>
 int main()
 {
