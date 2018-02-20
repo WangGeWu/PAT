@@ -53,7 +53,7 @@ void create()
 int main()
 {
 	int i;
-	//输入
+	//脢盲脠毛
 	scanf("%d", &n);
 	for (i = 0; i < 10000; i++)
 	{
@@ -68,7 +68,7 @@ int main()
 		v1--; v2--;
 		graph[v1][v2] = graph[v2][v1] = 1;
 	}
-	//统计连通分量
+	//脥鲁录脝脕卢脥篓路脰脕驴
 	int cnt = 0;
 	int Max = -1;
 	for (i = 0; i < n; i++)
