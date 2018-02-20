@@ -9,7 +9,7 @@ int main()
 	scanf("%d %d", &a, &b);
 	if (a < -1000000|| b>1000000)
 	{
-		printf("´íÎó");
+		printf("Â´Ã­ÃŽÃ³");
 		return 0;
 	}
 	temp = a + b;
