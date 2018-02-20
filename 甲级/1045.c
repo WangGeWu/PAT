@@ -1,9 +1,9 @@
 #include<stdio.h>
 #include<string.h>
 /*
-  *��̬�滮
-  *������LCS
-  *v[i][j]��ʾϲ����ɫ�����е�ǰi���������������ɫ���е�ǰj�������еĿ���õ���󳤶�
+  *动态规划
+  *类似于LCS
+  *v[i][j]表示喜欢颜色的序列的前i个子序列与给出颜色序列的前j个子序列的可求得的最大长度
   *if i==0||j==0:        v[i][j]=0;
   *else if v[i]==v[j]:   v[i][j]=max(v[i-1][j],v[i][j-1])+1
   *else                  v[i][j]=max(v[i-1][j],v[i][j-1])
