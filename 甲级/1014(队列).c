@@ -4,7 +4,7 @@ typedef struct node
 	int data[1001];
 	int front, rear;
 }queue;
-int FindEarly(queue *service, int n, int m)//²éÕÒ×îÔçÓĞÈËÀë¿ªµÄ´°¿Ú£¬²¢³ö¶Ó
+int FindEarly(queue *service, int n, int m)//æŸ¥æ‰¾æœ€æ—©æœ‰äººç¦»å¼€çš„çª—å£ï¼Œå¹¶å‡ºé˜Ÿ
 	int i;
 	int pos;
 	int min = 999999;
@@ -21,11 +21,11 @@ int FindEarly(queue *service, int n, int m)//²éÕÒ×îÔçÓĞÈËÀë¿ªµÄ´°¿Ú£¬²¢³ö¶Ó
 }
 int main()
 {
-	int time[1001];//±£´æÃ¿¸öÈË½áÊø·şÎñµÄÊ±¼ä
+	int time[1001];//ä¿å­˜æ¯ä¸ªäººç»“æŸæœåŠ¡çš„æ—¶é—´
 	queue windows[21];
-	int queue[1001];//¶ÔÁĞ
-	int head = 0;//¶ÓÍ·
-	int n, m, k, q; //´°¿ÚÊıÁ¿£¬»ÆÏßÄÚÔÊĞíÅÅ¶ÓµÄÊıÁ¿£¬¿Í»§ÊıÁ¿£¬²éÑ¯´ÎÊı
+	int queue[1001];//å¯¹åˆ—
+	int head = 0;//é˜Ÿå¤´
+	int n, m, k, q; //çª—å£æ•°é‡ï¼Œé»„çº¿å†…å…è®¸æ’é˜Ÿçš„æ•°é‡ï¼Œå®¢æˆ·æ•°é‡ï¼ŒæŸ¥è¯¢æ¬¡æ•°
 	int i, j;
 	scanf("%d %d %d %d", &n, &m, &k, &q);
 	for (i = 0; i < 21; i++)
@@ -35,7 +35,7 @@ int main()
 	for (i = 0; i < k; i++)
 		scanf("%d", &queue[i]);
 	i = 0; j = 0;
-	while (i<m&&head<k)//¸ø´°¿ÚÅÅ¶Ó
+	while (i<m&&head<k)//ç»™çª—å£æ’é˜Ÿ
 	{
 		while (j<n)
 		{
