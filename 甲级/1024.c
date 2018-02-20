@@ -3,7 +3,7 @@
 char s1[1001];
 char s2[1001];
 char s3[1001];
-void EXC(char a[])//×ª»»
+void EXC(char a[])//è½¬æ¢
 {
 	int i=0, j;
 	char temp;
@@ -17,7 +17,7 @@ void EXC(char a[])//×ª»»
 		i++; j--;
 	}
 }
-int judge(char a[])//ÅĞ¶Ï
+int judge(char a[])//åˆ¤æ–­
 {
 	int i=0, j=strlen(a)-1;
 	while (i<j)
