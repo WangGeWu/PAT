@@ -1,4 +1,4 @@
-//Ì°ĞÄËã·¨
+//è´ªå¿ƒç®—æ³•
 #include<stdio.h>
 #include<stdlib.h>
 #define inf 9999999
@@ -19,11 +19,11 @@ int cmp(const void *a, const void *b)
 }
 int main()
 {
-	double totalPrice=0;//×Ü»¨·Ñ
-	double nowprice=0;//´ËÊ±ĞĞÊ»Ê¹ÓÃÓÍµÄµ¥¼Û
-	double maxdis=0;//´ËÊ±¿ÉÒÔĞĞÊ»µÄ×î´ó¾àÀë
-	double nowdis=0;//´ËÊ±µÄ¾àÀë
-	double x = 0;//±íÊ¾µ½Õ¾µãºóÊ£ÏÂµÄÓÍÁ¿
+	double totalPrice=0;//æ€»èŠ±è´¹
+	double nowprice=0;//æ­¤æ—¶è¡Œé©¶ä½¿ç”¨æ²¹çš„å•ä»·
+	double maxdis=0;//æ­¤æ—¶å¯ä»¥è¡Œé©¶çš„æœ€å¤§è·ç¦»
+	double nowdis=0;//æ­¤æ—¶çš„è·ç¦»
+	double x = 0;//è¡¨ç¤ºåˆ°ç«™ç‚¹åå‰©ä¸‹çš„æ²¹é‡
 	int i;
 	int k;
 	int cmax, d, davg, n;
@@ -50,12 +50,12 @@ int main()
 			maxdis = nowdis + cmax*davg;
 			int flag = 0;
 			double minPriceDis = 0, minPrice = inf;
-			for (int i = 1; i <= n&&maxdis >= station[i].dist; i++)//Ñ°ÕÒ×î´óĞĞÊ»¾àÀëÖĞÓÍ¼ÛµØÓüÄ¿Ç°ÓÍ¼ÛµÄµÚÒ»¸öÕ¾µã
+			for (int i = 1; i <= n&&maxdis >= station[i].dist; i++)//å¯»æ‰¾æœ€å¤§è¡Œé©¶è·ç¦»ä¸­æ²¹ä»·åœ°ç‹±ç›®å‰æ²¹ä»·çš„ç¬¬ä¸€ä¸ªç«™ç‚¹
 			{
 				if (station[i].dist <= nowdis)continue;
 				if (nowprice > station[i].price)
 				{
-					totalPrice += ((station[i].dist - nowdis) / davg-x)*nowprice;//ÒòÎªÏÂÒ»Õ¾µãµÄÓÍ¼ÛµÍÓÚ´ËÕ¾µã£¬Òò´ËÖ»¼Ó¹»¿ÉÒÔµ½´ïÏÂÒ»Õ¾µãµÄÓÍÁ¿
+					totalPrice += ((station[i].dist - nowdis) / davg-x)*nowprice;//å› ä¸ºä¸‹ä¸€ç«™ç‚¹çš„æ²¹ä»·ä½äºæ­¤ç«™ç‚¹ï¼Œå› æ­¤åªåŠ å¤Ÿå¯ä»¥åˆ°è¾¾ä¸‹ä¸€ç«™ç‚¹çš„æ²¹é‡
 					x = 0;
 					nowprice = station[i].price;
 					nowdis = station[i].dist;
@@ -63,7 +63,7 @@ int main()
 					printf("%d->", station[i].node);
 					break;
 				}
-				if (station[i].price < minPrice)//Ã»ÕÒµ½µÍÓÚÄ¿Ç°ÓÍ¼ÛµÄÕ¾µã£¬ÍË¶øÇóÆä´Î£¬Ñ°ÕÒ×îµÍÓÍ¼ÛµÄÕ¾µã
+				if (station[i].price < minPrice)//æ²¡æ‰¾åˆ°ä½äºç›®å‰æ²¹ä»·çš„ç«™ç‚¹ï¼Œé€€è€Œæ±‚å…¶æ¬¡ï¼Œå¯»æ‰¾æœ€ä½æ²¹ä»·çš„ç«™ç‚¹
 				{
 					j = i;
 					minPrice = station[i].price;
@@ -71,8 +71,8 @@ int main()
 				}
 			}
 			if (flag == 0 && minPrice != inf) {
-				totalPrice += (nowprice * (cmax-x));//ÒòÎªµ½´ïµÄÕ¾µãÓÍ¼Û¸ßÓÚÄ¿Ç°Õ¾µã£¬ËùÒÔ¼ÓÂúÓÍ
-				x = cmax - (minPriceDis - nowdis) / davg;//µ½Õ¾µãºóÓÍÓĞÊ£Óà
+				totalPrice += (nowprice * (cmax-x));//å› ä¸ºåˆ°è¾¾çš„ç«™ç‚¹æ²¹ä»·é«˜äºç›®å‰ç«™ç‚¹ï¼Œæ‰€ä»¥åŠ æ»¡æ²¹
+				x = cmax - (minPriceDis - nowdis) / davg;//åˆ°ç«™ç‚¹åæ²¹æœ‰å‰©ä½™
 				nowprice = minPrice;
 				nowdis = minPriceDis;
 				printf("%d->", station[j].node);
