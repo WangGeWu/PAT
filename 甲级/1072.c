@@ -1,4 +1,4 @@
-//一个测试点没AC
+//脪禄赂枚虏芒脢脭碌茫脙禄AC
 #include<stdio.h>
 #include<stdlib.h>
 #define inf 9999999
