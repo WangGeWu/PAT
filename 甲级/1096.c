@@ -7,7 +7,7 @@ int main()
 	scanf("%d", &n);
 	int m = sqrt(n);
 	int len = 12;
-	for (i = 12; i > 0; i--)//Ã¶¾Ù
+	for (i = 12; i > 0; i--)//æžšä¸¾
 		for (j = 2; j <= m; j++)
 		{
 			long long ans = 1;
