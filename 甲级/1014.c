@@ -1,5 +1,5 @@
 #include<stdio.h>
-int FindEarly(int service[][11], int n, int m)//²éÕÒ×îÔçÓĞÈËÀë¿ªµÄ´°¿Ú£¬²¢½«ºóÃæµÄÈËÒÀ´ÎÇ°ÒÆ(³ö¶Ó)
+int FindEarly(int service[][11], int n, int m)//æŸ¥æ‰¾æœ€æ—©æœ‰äººç¦»å¼€çš„çª—å£ï¼Œå¹¶å°†åé¢çš„äººä¾æ¬¡å‰ç§»(å‡ºé˜Ÿ)
 {
 	int i;
 	int pos;
@@ -18,17 +18,17 @@ int FindEarly(int service[][11], int n, int m)//²éÕÒ×îÔçÓĞÈËÀë¿ªµÄ´°¿Ú£¬²¢½«ºóÃæ
 }
 int main()
 {
-	int time[1001];//±£´æÃ¿¸öÈË½áÊø·şÎñµÄÊ±¼ä
-	int windows[21][11];//Ä£Äâ´°¿Ú
-	int queue[1001];//¶ÔÁĞ
-	int head = 0;//¶ÓÍ·
-	int n, m, k, q; //´°¿ÚÊıÁ¿£¬»ÆÏßÄÚÔÊĞíÅÅ¶ÓµÄÊıÁ¿£¬¿Í»§ÊıÁ¿£¬²éÑ¯´ÎÊı
+	int time[1001];//ä¿å­˜æ¯ä¸ªäººç»“æŸæœåŠ¡çš„æ—¶é—´
+	int windows[21][11];//æ¨¡æ‹Ÿçª—å£
+	int queue[1001];//å¯¹åˆ—
+	int head = 0;//é˜Ÿå¤´
+	int n, m, k, q; //çª—å£æ•°é‡ï¼Œé»„çº¿å†…å…è®¸æ’é˜Ÿçš„æ•°é‡ï¼Œå®¢æˆ·æ•°é‡ï¼ŒæŸ¥è¯¢æ¬¡æ•°
 	int i, j;
 	scanf("%d %d %d %d", &n, &m, &k, &q);
 	for (i = 0; i < k; i++)
 		scanf("%d", &queue[i]);
 	i = 0; j = 0;
-	while (i<m&&head<k)//¸ø´°¿ÚÅÅ¶Ó
+	while (i<m&&head<k)//ç»™çª—å£æ’é˜Ÿ
 	{
 		while (j<n)
 		{
