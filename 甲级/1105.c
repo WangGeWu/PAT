@@ -24,8 +24,8 @@ int main()
 	int temp = n;
 	m = n / i; n = i;//m*n
 	int cnt = 0;
-	int x, y;//xºá×ø±ê£¬y×İ×ø±ê
-	int top = 0, bottom = m - 1, left = 0, right = n - 1;//·Ö±ğ±íÊ¾¾ØÕóµÄÉÏÏÂ×óÓÒ±ß½ç
+	int x, y;//xæ¨ªåæ ‡ï¼Œyçºµåæ ‡
+	int top = 0, bottom = m - 1, left = 0, right = n - 1;//åˆ†åˆ«è¡¨ç¤ºçŸ©é˜µçš„ä¸Šä¸‹å·¦å³è¾¹ç•Œ
 	int flag = 0;
 	while (1)
 	{
@@ -33,7 +33,7 @@ int main()
 		for (y = left; y <= right; y++)//right
 		{
 			b[x][y] = a[cnt++];
-			if (cnt == temp)//Êı¾İ´¦ÀíÍêºó£¬Ìø³öÑ­»·
+			if (cnt == temp)//æ•°æ®å¤„ç†å®Œåï¼Œè·³å‡ºå¾ªç¯
 			{
 				flag = 1;
 				break;
