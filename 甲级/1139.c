@@ -35,14 +35,14 @@ int main()
 		char v1[6], v2[6];
 		scanf("%s%s", v1, v2);
 		if (v1[0] != '-')
-			list[abs(atoi(v1))].sex = 1;//1±íÊ¾ÄĞĞÔ
+			list[abs(atoi(v1))].sex = 1;//1è¡¨ç¤ºç”·æ€§
 		else
-			list[abs(atoi(v1))].sex = -1;//-1±íÊ¾Å®ĞÔ
+			list[abs(atoi(v1))].sex = -1;//-1è¡¨ç¤ºå¥³æ€§
 		if (v2[0] != '-')
 			list[abs(atoi(v2))].sex = 1;
 		else
 			list[abs(atoi(v2))].sex = -1;
-		list[abs(atoi(v1))].fri[list[abs(atoi(v1))].num++] = abs(atoi(v2));//¼ÇÂ¼ÅóÓÑ
+		list[abs(atoi(v1))].fri[list[abs(atoi(v1))].num++] = abs(atoi(v2));//è®°å½•æœ‹å‹
 		list[abs(atoi(v2))].fri[list[abs(atoi(v2))].num++] = abs(atoi(v1));
 	}
 	int k;
@@ -57,13 +57,13 @@ int main()
 		int cnt = 0;
 		for (i = 0; i < list[v1].num; i++)
 		{
-			if (list[v1].fri[i] == v2)continue;//²»ÄÜÖ±½ÓÕÒµ½V2
-			if (list[list[v1].fri[i]].sex == list[v1].sex)//Ñ°ÕÒV1µÄÍ¬ĞÔÅóÓÑp
+			if (list[v1].fri[i] == v2)continue;//ä¸èƒ½ç›´æ¥æ‰¾åˆ°V2
+			if (list[list[v1].fri[i]].sex == list[v1].sex)//å¯»æ‰¾V1çš„åŒæ€§æœ‹å‹p
 			{
 				int p = list[v1].fri[i];
-				for (j = 0; j < list[p].num; j++)//Ñ°ÕÒV2µÄÍ¬ĞÔÅóÓÑ
+				for (j = 0; j < list[p].num; j++)//å¯»æ‰¾V2çš„åŒæ€§æœ‹å‹
 				{
-					if (list[p].fri[j] == v1)continue;//²»ÄÜÖ±½ÓÕÒµ½V1
+					if (list[p].fri[j] == v1)continue;//ä¸èƒ½ç›´æ¥æ‰¾åˆ°V1
 					if (list[list[p].fri[j]].sex == list[v2].sex&&find(list[p].fri[j], v2))
 					{
 						int q = list[p].fri[j];
