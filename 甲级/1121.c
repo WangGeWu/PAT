@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-int couple[1000000] = {0};
+int couple[1000000];
 int people[50000];
 int result[10000];
 int flag[50000] = {0};
@@ -17,7 +17,7 @@ int main()
 	{
 		int v1, v2;
 		scanf("%d%d", &v1, &v2);
-		couple[v1] = couple[v2] = i + 1;//½«·òÆŞµÄcoupleÖµÉèÎªÏàµÈ
+		couple[v1] = couple[v2] = i + 1;//å°†å¤«å¦»çš„coupleå€¼è®¾ä¸ºç›¸ç­‰
 	}
 	int cnt1 = 0;
 	int cnt2 = 0;
@@ -28,11 +28,11 @@ int main()
 		int v;
 		scanf("%d", &v);
 		if (couple[v] == 0)
-			result[cnt1++] = v;//¿Ï¶¨µ¥Éí,Ö±½Ó·ÅÈë½á¹ûÊı×é
+			result[cnt1++] = v;//è‚¯å®šå•èº«,ç›´æ¥æ”¾å…¥ç»“æœæ•°ç»„
 		else
 		{
-			people[cnt2++] = v;//´ıÈ·¶¨µÄ·ÅÈëpeopleÊı×é,±ãÓÚ·ÃÎÊ
-			flag[couple[v]]++;//¶ÔÓ¦µÄcouple¼Ó1.Èç¹û½á¹ûÎª1,Ôòµ¥Éí,Îª2Ôò²»µ¥Éí
+			people[cnt2++] = v;//å¾…ç¡®å®šçš„æ”¾å…¥peopleæ•°ç»„,ä¾¿äºè®¿é—®
+			flag[couple[v]]++;//å¯¹åº”çš„coupleåŠ 1.å¦‚æœç»“æœä¸º1,åˆ™å•èº«,ä¸º2åˆ™ä¸å•èº«
 		}
 	}
 	for (i = 0; i < cnt2; i++)
