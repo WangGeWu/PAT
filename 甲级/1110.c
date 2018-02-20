@@ -1,4 +1,4 @@
-//一个测试点没过
+//涓�涓偣娌¤繃
 #include<stdio.h>
 #include<stdlib.h>
 int hash[21];
