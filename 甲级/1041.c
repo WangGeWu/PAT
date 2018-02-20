@@ -1,10 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
 /*
-   *ÓÃflagÊý×é´æ´¢¶ÁÈëÊý×Ö³öÏÖµÄ´ÎÊý
-   *ÒòÎªÒªÇóÊä³öµÚÒ»¸öuniqueµÄÊý
-   *ËùÒÔ°´¶ÁÈëÊý¾ÝµÄË³Ðò²éÑ¯flagÊý×é
-   *Êä³öµÚÒ»¸öuniqueÊý
+   *ç”¨flagæ•°ç»„å­˜å‚¨è¯»å…¥æ•°å­—å‡ºçŽ°çš„æ¬¡æ•°
+   *å› ä¸ºè¦æ±‚è¾“å‡ºç¬¬ä¸€ä¸ªuniqueçš„æ•°
+   *æ‰€ä»¥æŒ‰è¯»å…¥æ•°æ®çš„é¡ºåºæŸ¥è¯¢flagæ•°ç»„
+   *è¾“å‡ºç¬¬ä¸€ä¸ªuniqueæ•°
 */
 int main()
 {
