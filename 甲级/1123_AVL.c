@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-int flag = 1;//±ê¼ÇÊÇ·ñÊÇÍêÈ«¶þ²æÊ÷
+int flag = 1;//æ ‡è®°æ˜¯å¦æ˜¯å®Œå…¨äºŒå‰æ ‘
 typedef struct node
 {
 	int key;
@@ -98,7 +98,7 @@ void bfs(tree root)
 			queue[++rear] = node->left;
 		else
 		{
-			if (rear - front+cnt!= n)//Èë¶ÓµÄ×Ü½áµãÊý²»µÈÓÚnÊ±£¬ËµÃ÷»¹Òª½ÚµãÃ»Èë¶Ó£¬µ«Óöµ½ÁË¿Õ½Úµã£¬Òò´Ë²»ÊÇÍêÈ«¶þ²æÊ÷
+			if (rear - front+cnt!= n)//å…¥é˜Ÿçš„æ€»ç»“ç‚¹æ•°ä¸ç­‰äºŽnæ—¶ï¼Œè¯´æ˜Žè¿˜è¦èŠ‚ç‚¹æ²¡å…¥é˜Ÿï¼Œä½†é‡åˆ°äº†ç©ºèŠ‚ç‚¹ï¼Œå› æ­¤ä¸æ˜¯å®Œå…¨äºŒå‰æ ‘
 				flag = 0;
 		}
 		if (node->right)
