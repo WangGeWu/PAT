@@ -4,16 +4,16 @@ struct stunode
 {
 	int id;
 	int Ge, Gi;
-	int rank;//ÅÅÃû
-	int school[5];//Ö¾Ô¸Ñ§Ğ£
-}stu[40001];//Ñ§Éú½á¹¹Ìå
+	int rank;//æ’å
+	int school[5];//å¿—æ„¿å­¦æ ¡
+}stu[40001];//å­¦ç”Ÿç»“æ„ä½“
 struct schnode
 {
-	int lastrank;//Ñ§Ğ£Ä¿Ç°Â¼È¡µÄ×îµÍÅÅÃû
-	int nownum;//Ä¿Ç°Â¼È¡µÄÈËÊı
-	int maxnum;//¼Æ»®Â¼È¡µÄÈËÊı
-	int stuid[40000];//ÒÑÂ¼È¡Ñ§ÉúµÄid
-}sch[100];//Ñ§Ğ£½á¹¹Ìå
+	int lastrank;//å­¦æ ¡ç›®å‰å½•å–çš„æœ€ä½æ’å
+	int nownum;//ç›®å‰å½•å–çš„äººæ•°
+	int maxnum;//è®¡åˆ’å½•å–çš„äººæ•°
+	int stuid[40000];//å·²å½•å–å­¦ç”Ÿçš„id
+}sch[100];//å­¦æ ¡ç»“æ„ä½“
 int cmp1(const void *a, const void *b)
 {
 	if (((struct stunode*)a)->Ge + ((struct stunode*)a)->Gi != ((struct stunode*)b)->Ge + ((struct stunode*)b)->Gi)
@@ -41,8 +41,8 @@ int main()
 			scanf("%d", &stu[i].school[j]);
 	}
     //process
-	qsort(stu, n, sizeof(struct stunode), cmp1);//°´³É¼¨ÅÅĞò
-	for (i = 0; i < n; i++)//¼ÆËãÅÅÃû
+	qsort(stu, n, sizeof(struct stunode), cmp1);//æŒ‰æˆç»©æ’åº
+	for (i = 0; i < n; i++)//è®¡ç®—æ’å
 	{
 		if (i == 0)
 		{
@@ -56,14 +56,14 @@ int main()
 				stu[i].rank = i + 1;
 		}
 	}
-	for (i = 0; i < n; i++)//¼ÆËãÂ¼È¡
+	for (i = 0; i < n; i++)//è®¡ç®—å½•å–
 	{
 		for (j = 0; j < k; j++)
 		{
-			if (sch[stu[i].school[j]].lastrank==stu[i].rank|| sch[stu[i].school[j]].maxnum>sch[stu[i].school[j]].nownum)//ÈËÊıÃ»ÕĞÂú»òÕß¸ÃÉúµÄÅÅÃûºÍÑ§Ğ£Â¼È¡µÄ×îµÍÅÅÃûÏàÍ¬
+			if (sch[stu[i].school[j]].lastrank==stu[i].rank|| sch[stu[i].school[j]].maxnum>sch[stu[i].school[j]].nownum)//äººæ•°æ²¡æ‹›æ»¡æˆ–è€…è¯¥ç”Ÿçš„æ’åå’Œå­¦æ ¡å½•å–çš„æœ€ä½æ’åç›¸åŒ
 			{
-				sch[stu[i].school[j]].lastrank = stu[i].rank;//¸üĞÂÅÅÃû
-				sch[stu[i].school[j]].stuid[sch[stu[i].school[j]].nownum++] = stu[i].id;//¼ÇÂ¼Â¼È¡µÄÑ§Éú
+				sch[stu[i].school[j]].lastrank = stu[i].rank;//æ›´æ–°æ’å
+				sch[stu[i].school[j]].stuid[sch[stu[i].school[j]].nownum++] = stu[i].id;//è®°å½•å½•å–çš„å­¦ç”Ÿ
 				break;
 			}
 		}
@@ -71,7 +71,7 @@ int main()
 	//output
 	for (i = 0; i < m; i++)
 	{
-		qsort(sch[i].stuid, sch[i].nownum, sizeof(int), cmp2);//Ñ§ÉúidÅÅĞòºóÔÙÊä³ö
+		qsort(sch[i].stuid, sch[i].nownum, sizeof(int), cmp2);//å­¦ç”Ÿidæ’åºåå†è¾“å‡º
 		for (j = 0; j < sch[i].nownum; j++)
 		{
 			if (j != 0)
