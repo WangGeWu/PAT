@@ -1,6 +1,6 @@
 #include<stdio.h>
-int flag1[10000];//±ê¼ÇÊÇ·ñ´æÔÚ
-int flag2[10000];//±ê¼ÇÊÇ·ñ·ÃÎÊ¹ı
+int flag1[10000];//æ ‡è®°æ˜¯å¦å­˜åœ¨
+int flag2[10000];//æ ‡è®°æ˜¯å¦è®¿é—®è¿‡
 int stu[10000];
 int judge(int n)
 {
