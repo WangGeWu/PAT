@@ -1,4 +1,4 @@
-//bfs°æ±¾
+//bfs
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
