@@ -26,10 +26,10 @@ int cmp(const void* a, const void* b)
 }
 int main()
 {
-	int n,k;//¿Í»§×ÜÊý£¬´°¿ÚÊýÁ¿
-	int window[101];//Ä£Äâ´°¿Ú
+	int n,k;//å®¢æˆ·æ€»æ•°ï¼Œçª—å£æ•°é‡
+	int window[101];//æ¨¡æ‹Ÿçª—å£
 	int i, j;
-	int num=0;//¼ÇÂ¼ÓÐÐ§µÄÓÃ»§ÊýÁ¿
+	int num=0;//è®°å½•æœ‰æ•ˆçš„ç”¨æˆ·æ•°é‡
 	int s;
 	int hh, mm, ss, time;
 	scanf("%d %d", &n, &k);
@@ -39,14 +39,14 @@ int main()
 		s = hh * 60 * 60 + mm * 60 + ss;
 		if (time > 60)
 			time = 60;
-		if (s <= 17 * 60 * 60)//¼ÇÂ¼17µãÖ®Ç°µ½µÄÓÃ»§
+		if (s <= 17 * 60 * 60)//è®°å½•17ç‚¹ä¹‹å‰åˆ°çš„ç”¨æˆ·
 		{
 			S[num].start = s;
 			S[num++].end = s + time * 60;
 		}
 	}
-	qsort(S, num, sizeof(struct node), cmp);//°´µ½À´Ê±¼äË³ÐòÅÅ¶Ó
-	for (i = 0; i < k; i++)//³õÊ¼»¯´°¿ÚµÄÊ±¼ä£¨8µã£©
+	qsort(S, num, sizeof(struct node), cmp);//æŒ‰åˆ°æ¥æ—¶é—´é¡ºåºæŽ’é˜Ÿ
+	for (i = 0; i < k; i++)//åˆå§‹åŒ–çª—å£çš„æ—¶é—´ï¼ˆ8ç‚¹ï¼‰
 	{
 		window[i] = 8 * 60 * 60;
 	}
@@ -55,7 +55,7 @@ int main()
 	double wait_time=0.0;
 	while (cnt < num)
 	{
-		pos = FindMin(window, k);//²éÕÒ×îÔç½áÊøµÄ´°¿Ú
+		pos = FindMin(window, k);//æŸ¥æ‰¾æœ€æ—©ç»“æŸçš„çª—å£
 		int w=S[cnt].end - S[cnt].start;
 		if (S[cnt].start < window[pos])
 		{
