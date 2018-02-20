@@ -18,7 +18,7 @@ int main()
 	int i;
 	for (i = 0; i < 10; i++)
 		stra[i]=strb[i]=strc[i]='0';
-	scanf("%s", stra+10);//Êı×éÖĞÔ¤ÁôÏÂ10Î»µÄ½øÎ»,
+	scanf("%s", stra+10);//æ•°ç»„ä¸­é¢„ç•™ä¸‹10ä½çš„è¿›ä½,
 	strcpy(strc, stra);
 	strb[strlen(stra)] = '\0';
 	int cnt = 0;
@@ -32,10 +32,10 @@ int main()
 		while (stra[i] == '0')i++;
 		a = i;
 		int temp = strlen(stra)-1;
-		for (i=a; i < strlen(stra); i++)//½«A·­×ª£¬¿½±´¸øB
+		for (i=a; i < strlen(stra); i++)//å°†Aç¿»è½¬ï¼Œæ‹·è´ç»™B
 			strb[temp--] = stra[i];
-		int flag = 0;//½øÎ»±êÖ¾
-		for (i = strlen(stra) - 1; i >= a; i--)//¼ÆËãC
+		int flag = 0;//è¿›ä½æ ‡å¿—
+		for (i = strlen(stra) - 1; i >= a; i--)//è®¡ç®—C
 		{
 			strc[i] = ((stra[i] - '0' + strb[i] - '0'+flag) % 10 ) + '0';
 			if ((stra[i] - '0' + strb[i] - '0' + flag) >= 10)
@@ -56,7 +56,7 @@ int main()
 		i = 0;
 		while (strc[i] == '0')i++;
 		c = i;
-		printf("%s + %s = %s\n", stra+a, strb+b, strc+c);//´ÓµÚÒ»¸ö·Ç0Î»¿ªÊ¼Êä³ö
+		printf("%s + %s = %s\n", stra+a, strb+b, strc+c);//ä»ç¬¬ä¸€ä¸ªé0ä½å¼€å§‹è¾“å‡º
 		cnt++;
 	}
 	if (cnt != 10)
