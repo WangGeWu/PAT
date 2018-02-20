@@ -3,8 +3,8 @@
 int	Pro[2001];
 int Post[2001];
 int cnt = 0;
-int flag = 1;//±ê¼ÇÊÇ·ñÊÇÂú×ãËÑË÷Ê÷µÄÇ°Ğò±éÀúË³Ğò
-void judge1(int root, int num)//rootÎª¸ù½ÚµãÏÂ±ê£¬numÎªĞèÒª´¦ÀíµÄ½ÚµãÊı
+int flag = 1;//æ ‡è®°æ˜¯å¦æ˜¯æ»¡è¶³æœç´¢æ ‘çš„å‰åºéå†é¡ºåº
+void judge1(int root, int num)//rootä¸ºæ ¹èŠ‚ç‚¹ä¸‹æ ‡ï¼Œnumä¸ºéœ€è¦å¤„ç†çš„èŠ‚ç‚¹æ•°
 {
 	if (num<=0)return;
 	int i = root + 1, j = root+num-1;
@@ -13,14 +13,14 @@ void judge1(int root, int num)//rootÎª¸ù½ÚµãÏÂ±ê£¬numÎªĞèÒª´¦ÀíµÄ½ÚµãÊı
 	if (i - j == 1)
 	{
 		judge1(root + 1, i-(root+1));
-		//Post[cnt++]=Pro[root] Èç¹û¼ÇÂ¼·ÅÔÚ´Ë´¦£¬ÔòÎªÖĞĞò±éÀúµÄË³Ğò
+		//Post[cnt++]=Pro[root] å¦‚æœè®°å½•æ”¾åœ¨æ­¤å¤„ï¼Œåˆ™ä¸ºä¸­åºéå†çš„é¡ºåº
 		judge1(i, num-1-(i-(root+1)));
-		Post[cnt++] = Pro[root];//×óÓÒ×ÓÊ÷´¦ÀíÍêºó£¬½«¸ù½Úµã·ÅÈëÊı×é£¬¼´ºóĞò±éÀúµÄË³Ğò
+		Post[cnt++] = Pro[root];//å·¦å³å­æ ‘å¤„ç†å®Œåï¼Œå°†æ ¹èŠ‚ç‚¹æ”¾å…¥æ•°ç»„ï¼Œå³ååºéå†çš„é¡ºåº
 	}
 	else
 		flag = 0;
 }
-void judge2(int root, int num)//¾µÏñÊ÷
+void judge2(int root, int num)//é•œåƒæ ‘
 {
 	if (num<=0)return;
 	int i = root + 1, j = root+num-1;
