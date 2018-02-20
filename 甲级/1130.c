@@ -6,11 +6,11 @@ struct node
 }tree[21];
 int root;
 int flag[21];
-void inorder(int t)//递归中序
+void inorder(int t)//閫掑綊涓簭
 {
 	if (t != -1)
 	{
-		if (!(tree[t].left == -1 && tree[t].right == -1)&&t!=root)//t节点有孩子且t不是树的根root
+		if (!(tree[t].left == -1 && tree[t].right == -1)&&t!=root)//t鑺傜偣鏈夊瀛愪笖t涓嶆槸鏍戠殑鏍箁oot
 			printf("(");
 		inorder(tree[t].left);
 		printf("%s", tree[t].key);
