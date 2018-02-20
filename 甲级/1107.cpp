@@ -1,4 +1,4 @@
-//2个点没过
+//2涓偣娌¤繃
 #include<stdio.h>
 #include<stdlib.h>
 struct stunode
