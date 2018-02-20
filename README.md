@@ -9,4 +9,4 @@ PAT甲级题库 https://www.patest.cn/contests/pat-a-practise
 
 
 
-都是用C完成的。因为是使用的是VS，所以文件命名为cpp了。
+欢迎批评执政(⊙o⊙)！
