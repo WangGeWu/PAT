@@ -16,7 +16,7 @@ int main()
 		long left = atoi(s);
 		if (left&&right)
 		{
-			if (num % (left*right) == 0)//���ܶ�0ȡģ
+			if (num % (left*right) == 0)//不能对0取余
 				printf("Yes\n");
 			else
 				printf("No\n");
