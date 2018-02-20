@@ -1,7 +1,6 @@
 #include<stdio.h>
 int main()
 {
-	
 	int n, k;
 	int array[40];
 	int i = 0;
