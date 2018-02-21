@@ -5,6 +5,7 @@ typedef struct node
 	int front, rear;
 }queue;
 int FindEarly(queue *service, int n, int m)//查找最早有人离开的窗口，并出队
+{
 	int i;
 	int pos;
 	int min = 999999;
