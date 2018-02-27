@@ -112,7 +112,7 @@ int main()
 				if (cost_dist[i] > cost_dist[node] + graph_dist[node][i])
 				{
 					cost_dist[i] = cost_dist[node] + graph_dist[node][i];
-					cost_time[i] = cost_time[node] + graph_time[node][i]
+					cost_time[i] = cost_time[node] + graph_time[node][i];
 					path_dist[i] = node;
 				}
 				else if (cost_dist[i] == cost_dist[node] + graph_dist[node][i])
