@@ -1,77 +1,54 @@
 #include<stdio.h>
-#define inf 9999
+#include<stdlib.h>
+#define inf 999999999
 int n;
-int visit[10000];
-int node[10000];
-int graph[10000][10000];
-int deep[10000];
-void dfs_two(int v)
+int visit[10010];
+int result[20000];
+struct node
 {
-	int i;
-	visit[v] = 1;
-	for (i = 0; i < n; i++)
-	{
-		if (graph[v][i] < inf&&visit[i] == 0)
-		{
-			visit[i] = 1;
-			deep[i] = deep[v] + 1;
-			dfs_two(i);
-		}
-	}
+	int child_num;
+	int child[10000];
+}list[10010];
+int deep[10010];
+int flag[10010];
+int cmp(const void *a, const void *b)
+{
+	return *(int*)a > *(int*)b;
 }
 void dfs(int v)
 {
 	int i;
 	visit[v] = 1;
-	for (i = 0; i < n; i++)
+	for (i = 0; i < list[v].child_num; i++)
 	{
-		if (graph[v][i] < inf&&visit[i] == 0)
+		if (visit[list[v].child[i]] == 0)
 		{
-			visit[i] = 1;
-			dfs(i);
+			deep[list[v].child[i]] = deep[v] + 1;
+			dfs(list[v].child[i]);
 		}
 	}
-}
-int FindMax()
-{
-	int i;
-	int max = -1;
-	for (i = 0; i < n; i++)
-	{
-		if (max < deep[i])
-		{
-			max = deep[i];
-		}
-	}
-	return max;
-}
-void create()
-{
-	for (int i = 0; i < n; i++)
-		deep[i] = 0;
 }
 int main()
 {
 	int i;
-	//ÊäÈë
+	//输入
 	scanf("%d", &n);
-	for (i = 0; i < 10000; i++)
+	for (i = 0; i < n; i++)
 	{
 		visit[i] = 0;
-		for (int j = 0; j < 10000; j++)
-			graph[i][j] = inf;
+		flag[i] = 0;
 	}
 	for (i = 0; i < n - 1; i++)
 	{
 		int v1, v2;
 		scanf("%d %d", &v1, &v2);
-		v1--; v2--;
-		graph[v1][v2] = graph[v2][v1] = 1;
+		list[v1].child[list[v1].child_num++] = v2;
+		list[v2].child[list[v2].child_num++] = v1;
 	}
-	//Í³¼ÆÁ¬Í¨·ÖÁ¿
+	//统计连通分量
 	int cnt = 0;
-	int Max = -1;
-	for (i = 0; i < n; i++)
+	deep[1] = 0;
+	for (i = 1; i <= n; i++)
 	{
 		if (visit[i] == 0)
 		{
@@ -79,21 +56,47 @@ int main()
 			cnt++;
 		}
 	}
-	if (cnt == 1)
+	if (cnt<2)
 	{
-		for (i = 0; i < n; i++)
+		int Max = -1;
+		cnt = 0;
+		for (i = 1; i <= n; i++)
 		{
-			for (int j = 0; j < n; j++)
-				visit[j] = 0;
-			deep[i] = 0;
-			dfs_two(i);
-			node[i] = FindMax();
-			if (node[i] > Max)
-				Max = node[i];
+			if (deep[i] > Max)
+			{
+				cnt = 0;
+				result[cnt++] = i;
+				Max = deep[i];
+			}
+			else if (deep[i] == Max)
+				result[cnt++] = i;
 		}
-		for (i = 0; i < n; i++)
-			if (node[i] == Max)
-				printf("%d\n", i + 1);
+		int temp = cnt;
+		for (i = 1; i <= n; i++)
+			visit[i] = 0;
+		deep[result[0]] = 0;
+		dfs(result[0]);
+		Max = -1;
+		for (i = 1; i <= n; i++)
+		{
+			if (deep[i] > Max)
+			{
+				cnt = temp;
+				result[cnt++] = i;
+				Max = deep[i];
+			}
+			else if (deep[i] == Max)
+				result[cnt++] = i;
+		}
+		qsort(result, cnt, sizeof(int), cmp);
+		for (i = 0; i < cnt; i++)
+		{
+			if (flag[result[i]] == 0)
+			{
+				flag[result[i]] = 1;
+				printf("%d\n", result[i]);
+			}
+		}
 	}
 	else
 	{
