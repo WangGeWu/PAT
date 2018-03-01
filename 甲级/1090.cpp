@@ -18,7 +18,7 @@ void dfs(int n)
 {
 	if (list[n].child.size() == 0)//叶子节点
 	{
-		price = pow(1 + r, list[n].deep - 1)*p;
+		price = pow(1 + r, list[n].deep)*p;
 		if (price > Max)
 		{
 			Max = price;
@@ -38,15 +38,16 @@ int main()
 	scanf("%d%lf%lf", &n, &p, &r);
 	r = r / 100;
 	int i;
+	int root;
 	for (i = 0; i < n; i++)
 	{
 		int v;
 		scanf("%d", &v);
 		if (v == -1)
-			list[n].child.push_back(i);//根节点放在下标为n处
+			root=i;//根节点
 		else
 			list[v].child.push_back(i);
 	}
-	dfs(n);
+	dfs(root);
 	printf("%.2lf %d", Max, cnt);
 }
