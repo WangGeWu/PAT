@@ -1,11 +1,10 @@
-//一个点没过
 #include<stdio.h>
 #include<stdlib.h>
 int hash[21];
 struct node {
 	int left, right;
 }tree[21];
-int queue[100];
+int queue[10000];
 int front = -1, rear = -1;
 int n;
 void bfs(int t)
@@ -18,7 +17,7 @@ void bfs(int t)
 		int node = queue[++front];
 		if (node != -1)
 		{
-		    lastnode = node;
+			lastnode = node;
 			cnt++;
 		}
 		else
@@ -46,11 +45,11 @@ int main()
 			tree[i].left = -1;
 		else
 		{
-			tree[i].right = atoi(s1);
+			tree[i].left = atoi(s1);
 			hash[atoi(s1)] = 1;
 		}
 		if (s2[0] == '-')
-			tree[i].left = -1;
+			tree[i].right = -1;
 		else
 		{
 			tree[i].right = atoi(s2);
