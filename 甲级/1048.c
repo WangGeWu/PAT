@@ -1,45 +1,35 @@
-//两个测试点超时，可以采用hash的思想,硬币的价值对应数组下标存放，数组内容存放次价值的硬币数量
-//但是为什么不改呢，因为我懒啊
 #include<stdio.h>
-int coin[100001];
+#include<stdlib.h>
+int coin[1001];
 int main()
 {
 	int v1, v2;
-	int low, high;
 	int n, m;
 	int i, j;
 	scanf("%d %d", &n, &m);
 	for (i = 0; i < n; i++)
-		scanf("%d", &coin[i]);
-	int flag = 0;
-	int min = 1001;
-	for (i = 0; i<n; i++)
-		for (j = i + 1; j < n; j++)
+	{
+		int value;
+		scanf("%d", &value);
+		coin[value]++;
+	}
+	int flag;
+	for (i = 0; i < 1001; i++)
+	{
+		flag = 0;
+		if (coin[i])
 		{
-			if (coin[i] + coin[j] == m)
+			flag = 1;
+			coin[i]--;
+			if (coin[m - i])
 			{
-				flag = 1;
-				if (coin[i] < coin[j])
-				{
-					low = i;
-					high = j;
-				}
-				else
-				{
-					low = j;
-					high = i;
-				}
-				if (coin[low] < min)
-				{
-					min = coin[low];
-					v1 = low;
-					v2 = high;
-				}
+				printf("%d %d", i, m - i);
+				return 0;
 			}
 		}
-	if (flag == 1)
-		printf("%d %d", coin[v1], coin[v2]);
-	else
-		printf("No Solution");
+		if (flag)
+			coin[i]++;
+	}
+	printf("No Solution");
 	return 0;
 }
