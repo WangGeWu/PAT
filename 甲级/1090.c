@@ -1,32 +1,33 @@
-//两个测试点没过
+//因为不知道每个节点的最多有多少子节点，所以在结构体内开辟孩子节点的数组时，很难把握开辟的大小，所以用了C++里面的vector
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
+#include<vector>
+using namespace std;
 struct node {
 	int deep;
-	int child[100];
-	int childnum;
+	vector<int>child;
 }list[100001];
 int top = -1;
 int cnt;
 double price;
 int n;
-double max = -1;
+double Max = -1;
 double p, r;
 void dfs(int n)
 {
-	if (list[n].childnum == 0)//叶子节点
+	if (list[n].child.size() == 0)//叶子节点
 	{
-		price = pow(1 + r, list[n].deep-1)*p;
-		if (price > max)
+		price = pow(1 + r, list[n].deep - 1)*p;
+		if (price > Max)
 		{
-			max = price;
+			Max = price;
 			cnt = 1;
 		}
-		else if (price == max)
+		else if (price == Max)
 			cnt++;
 	}
-	for (int i = 0; i < list[n].childnum; i++)
+	for (int i = 0; i < list[n].child.size(); i++)
 	{
 		list[list[n].child[i]].deep = list[n].deep + 1;
 		dfs(list[n].child[i]);
@@ -42,10 +43,10 @@ int main()
 		int v;
 		scanf("%d", &v);
 		if (v == -1)
-			list[n].child[list[n].childnum++] = i;//根节点放在下标为n处
+			list[n].child.push_back(i);//根节点放在下标为n处
 		else
-			list[v].child[list[v].childnum++] = i;
+			list[v].child.push_back(i);
 	}
 	dfs(n);
-	printf("%.2lf %d", max, cnt);
+	printf("%.2lf %d", Max, cnt);
 }
