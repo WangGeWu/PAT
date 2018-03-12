@@ -53,7 +53,7 @@ int main()
 	for (i = 0; i < n; i++)
 		scanf("%d", &num[i]);
 	qsort(num, n, sizeof(int), cmp);
-    build(0,0,n-1);
+        build(0,0,n-1);
 	bfs(0);
 	return 0;
 }
